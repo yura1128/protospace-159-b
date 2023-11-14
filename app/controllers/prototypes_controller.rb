@@ -9,6 +9,10 @@ class PrototypesController < ApplicationController
     @Prototype = Prototype.new
   end
 
+  def create
+
+  end
+
   def show
     
   end
@@ -17,6 +21,10 @@ class PrototypesController < ApplicationController
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
+    end
+    
+    def message_params
+      params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
     end
   end
 end
