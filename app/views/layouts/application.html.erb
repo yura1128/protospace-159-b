@@ -20,10 +20,10 @@
           </div>
 
           <% if user_signed_in? %>
-             <div class="nav__right"> 
+            <div class="nav__right"> 
               <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout, data: { turbo_method: :delete} %>
-               <%= link_to "New Proto", new_prototype_path,class: :nav__btn %>
-             </div> 
+              <%= link_to "New Proto", new_prototype_path,class: :nav__btn %>
+            </div> 
           <% else %>
             <div class="nav__right">
               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
