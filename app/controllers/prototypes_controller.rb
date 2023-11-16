@@ -14,7 +14,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to root_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class PrototypesController < ApplicationController
     if prototype.update(prototype_params)
       redirect_to prototype_path(prototype.id)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
